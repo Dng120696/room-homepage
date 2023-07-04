@@ -109,7 +109,7 @@ h1,p:not(.main--info){
   transition: left 600ms;
 }
 .menu-links ul{
-  gap: clamp(2rem,6.5vw,5rem);
+  gap: clamp(2rem,6.5vw,4rem);
 }
 .menu-links a{
   color: var(--Black);
@@ -292,7 +292,7 @@ header{
   }
   .arrow-buttons{
     left:58.3%;
-    top:85.5%;
+    top:86%;
     width: clamp(15.5rem,15.1vw,23rem);
     height: clamp(7rem,7.5vw,8rem); 
   }
