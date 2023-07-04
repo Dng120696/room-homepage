@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
+
+:root{
+  /* ### Primary */
+  
+  --Dark-Gray: hsl(0, 0%, 63%);
+  --Black: hsl(0, 0%, 0%);
+  --White: hsl(0, 0%, 100%);
+  --Very-Dark-Gray: hsl(0, 0%, 27%);
+}
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*,*::before,*::after{
+  font-family: 'League Spartan', sans-serif;
+  box-sizing: inherit;
+  margin: 0;
+  outline:none;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+body{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80rem 0.5fr 1.7fr 0.5fr;
+  min-height: 100vh;
+}
+.grid{
+  display: grid;
+  align-items: center;
+}
+.flex{
+  display: flex;
+  align-items: center;
+}
+.flex-col{
+  flex-direction: column;
+}
+img{
+  max-width: 100%;
+}
+h1{
+  font-size: clamp(3.2rem,3.5vw,4.6rem);
+  font-weight: 700;
+}
+p,a{
+  font-size: clamp(1.6rem,1.7vw,1.8rem);
+  font-weight: 500;
+}
+p{
+  font-weight: 500;
+  color: var(--Dark-Gray);
+  line-height: 1.4;
+}
+h1,p:not(.main--info){
+  margin-bottom: 3rem;
+}
+.btn{
+  border:  none;
+  letter-spacing: 1rem;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.btn::after{
+  content: url(./images/icon-arrow.svg);
+}
+.btn:hover{
+  opacity: 0.5;
+  transition: opacity 300ms;
+  cursor: pointer;
+}
+/* nav section */
+.nav--section{
+  position: absolute;
+  height: clamp(10rem,13vw,14rem);
+  top:clamp(5rem,7vw,7rem);
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  grid-template-columns: repeat(3,1fr);
+  z-index: 10;
+}
+.nav--section,.menu-links{
+  padding: 0 2.4rem;
+}
+.logo{
+  width: clamp(10rem,11vw,12rem);
+  align-self: center;
+  justify-self: center;
+}
+.menu-links{
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: clamp(10rem,13vw,14rem);
+  background-color: var(--White);
+  justify-content: space-between;
+  transition: left 600ms;
+}
+.close-menu,.open-menu{
+  cursor: pointer;
+}
+.show-menu-links{
+  left: 0;
+  transition: left 600ms;
+}
+.menu-links ul{
+  gap: clamp(2rem,6.5vw,5rem);
+}
+.menu-links a{
+  color: var(--Black);
+  font-weight: 700;
+  text-transform:lowercase;
+  position: relative;
+}
+.menu-links a::after{
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  width: 0;
+  transform: translate(-50%,-50%);
+  background-color: var(--Black);
+  height: 3px;
+  border-radius: 5rem;
+  transition: width 600ms;
+}
+.menu-links a:hover::after{
+  width: 100%;
+  transition: width 600ms;
+}
+/* header section */
+header{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.arrow-buttons{
+  position: absolute;
+  top: 34rem;
+  right:0;
+  background-color: var(--Black);
+  width: 10rem;
+  height: 6rem;
+  justify-content: space-between;
+  z-index: 6;
+
+  text-align: center;
+
+}
+.arrow-buttons div{
+  height: 100%;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+.arrow-buttons div:hover{
+  background-color: var(--Dark-Gray);
+  transition: 600ms;
+  cursor: pointer;
+
+}
+.header--section{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition:transform 600ms;
+}
+
+.header--img {
+  width: 100%;
+  height: 100%;
+}
+.header--img-1{
+  background:url(./images/mobile-image-hero-1.jpg)no-repeat center center/cover;
+  width: 100%;
+}
+.header--img-2{
+  background:url(./images/mobile-image-hero-2.jpg)no-repeat center center/cover;
+  width: 100%;
+}
+.header--img-3{
+  background:url(./images/mobile-image-hero-3.jpg)no-repeat center center/cover;
+  width: 100%;
+}
+
+.header--section--1{
+  z-index: 5;
+}
+.header--img,.header--content{
+  height: 50%;
+}
+.header--section div,.main--content{
+  position: relative;
+  width: 100%;
+  height: 50%;
+}
+.main--content{
+  width: 100%;
+  height: 100%;
+}
+.header--content,.main--content div{ 
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 87%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+/* MAIN SECTION */
+.main--title{
+  letter-spacing: 5px;
+  font-weight: 700;
+  color: var(--Black);
+  text-transform: uppercase;
+}
+.main--img{
+  height: 100%;
+  width: 100%;
+}
+.main--img img{
+  height: 100%;
+  width: 100%;
+}
+@media (min-width:1024px){
+  
+  body{
+    grid-template-columns: 1fr 1.75fr 1fr;
+    grid-template-rows: clamp(50rem,80vh,55rem) 1fr;
+    grid-template-areas: 'header header header'
+                        'footer1 footer2 footer3';
+  }
+  .nav--section,.menu-links{
+    padding: 0;
+  }
+  .nav--section{
+    left:30%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    grid-template-columns:0.3fr 1fr;
+  }
+  .logo{
+    justify-self: flex-start;
+  }
+  .menu-links{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    background-color: transparent;
+  
+
+  }
+  .menu-links a::after{
+    background-color: var(--White);
+  }
+  .close-menu,.open-menu{
+    display: none;
+  }
+  .menu-links a{
+    color: var(--White);
+  }
+  header{
+    grid-area: header;
+  }
+  .main--img-1{
+    grid-area: footer1;
+  }
+  .main--content{
+    grid-area: footer2;
+  }
+  .main--img-2{
+    grid-area: footer3;
+  }
+  .header--section{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+  }
+  .header--section article,.header--section div{
+    height: 100%;
+  }
+  .arrow-buttons{
+    left:58.3%;
+    top:85.5%;
+    width: clamp(15.5rem,15.1vw,23rem);
+    height: clamp(7rem,7.5vw,8rem); 
+  }
+  .header--img-1{
+    background:url(./images/desktop-image-hero-1.jpg)no-repeat center center/ 100% 100%;
+    width: 100%;
+  }
+  .header--img-2{
+    background:url(./images/desktop-image-hero-2.jpg)no-repeat center center / 100% 100%;
+    width: 100%;
+  }
+  .header--img-3{
+    background:url(./images/desktop-image-hero-3.jpg)no-repeat center center / 100% 100%;
+    width: 100%;
+  }
+  .header--content{
+    width: 80%;
+  }
+  .header--content{
+    width: 85%;
+  }
+ 
+
+}
